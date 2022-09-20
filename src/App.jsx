@@ -1,11 +1,14 @@
-import { useAddress, useMetamask } from '@thirdweb-dev/react';
-import { useState } from 'react';
+import { useAddress, useMetamask, useEditionDrop } from '@thirdweb-dev/react';
+import { useState, useEffect } from 'react';
 
 const App = () => {
   // Use the hooks thirdweb give us.
   const address = useAddress();
   const connectWithMetamask = useMetamask();
   console.log("👋 Address:", address);
+
+  const editionDrop = useEditionDrop("INSERT_EDITION_DROP_ADDRESS");
+  
 
   // This is the case where the user hasn't connected their wallet
   // to your web app. Let them call connectWallet.
